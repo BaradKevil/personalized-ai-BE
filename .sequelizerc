@@ -1,0 +1,19 @@
+/**
+ * ===========================================
+ *  Sequelize CLI Configuration (.sequelizerc)
+ * ===========================================
+ *
+ * Tells sequelize-cli where to find config, migrations,
+ * seeders, and models. Registers ts-node so the CLI
+ * can execute TypeScript migration and seeder files directly.
+ */
+
+require('ts-node/register');
+const path = require('path');
+
+module.exports = {
+  config: path.resolve('config', 'sequelize-cli.config.js'),
+  'migrations-path': path.resolve('src', 'database', 'migrations'),
+  'seeders-path': path.resolve('src', 'database', 'seeders'),
+  'models-path': path.resolve('src', 'models'),
+};
